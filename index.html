@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michael McFarland | Portfolio</title>
-  <link rel="icon" href="assets/favicon/pxArt.png" type="image/png">
+  <link rel="icon" href="assets/favicon/pxArt2.png" type="image/png">
   <style>
     :root {
       color-scheme: light dark;
@@ -220,6 +220,21 @@
     article p {
       margin: 0;
       color: #555;
+    }
+
+    .about-overview {
+      position: relative;
+      padding-bottom: clamp(3.5rem, 10vw, 6rem);
+    }
+
+    .about-overview__icon {
+      position: absolute;
+      bottom: 0;
+      right: 1.25rem;
+      width: clamp(88px, 16vw, 120px);
+      height: auto;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
     }
 
     figure {
@@ -1012,11 +1027,12 @@
     <section id="about">
       <h2>About</h2>
       <div class="examples">
-        <article>
+        <article class="about-overview">
           <h3>Overview</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisl eu luctus porta.</p>
           <p>Vestibulum dapibus elit at magna posuere, eu pharetra velit luctus. Integer faucibus mauris ac sapien luctus interdum.</p>
           <p>Curabitur finibus neque sed tempor viverra. Duis fermentum est ut sapien aliquet, ac vehicula libero dictum.</p>
+          <img src="assets/favicon/icon.png" alt="" class="about-overview__icon" loading="lazy" decoding="async" aria-hidden="true">
         </article>
         <article>
           <h3>Education & Credentials</h3>
