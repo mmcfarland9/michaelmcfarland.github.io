@@ -31,11 +31,6 @@ Creative / Select Creative Partnerships
 - Live captures highlight collaborative direction across theatre residencies, tour stops, and hybrid streaming builds.
 - Detailed call sheets and pre-production decks align lighting, audio, and narrative beats before cameras roll.
 
-Creative / Media Industry
-- Storyboards music videos, concert films, and promotional shorts that extend sound into visual storytelling.
-- Workflow: Align creatives in pre-production, capture multi-cam performances, and deliver color-managed edits for broadcast and social releases.
-- Archives include documentaries, lyric videos, and live session reels ready for press kits and distributor briefs.
-
 Software / Untitled VoiceDAW App
 - Rapid-prototyped a voice-driven workstation that captures performances, transcribes takes, and routes stems without touching a mouse.
 - Modular engine supports scene-based arrangements, live looping, and MIDI control surfaces for adaptive shows.
