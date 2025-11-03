@@ -228,10 +228,17 @@
     .media-panel__cover {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;
+      aspect-ratio: 16 / 9;
       border-radius: 0.75rem;
       overflow: hidden;
       background: #000;
+    }
+
+    @supports not (aspect-ratio: 1 / 1) {
+      .media-panel__cover {
+        padding-bottom: 56.25%;
+        height: 0;
+      }
     }
 
     .media-panel__cover img {
@@ -774,10 +781,6 @@
         width: calc(100vw - clamp(1rem, 4vw, 2rem));
         max-height: 90vh;
       }
-
-      .theatre__media {
-        min-height: clamp(240px, 55vh, 520px);
-      }
     }
 
     .theatre__visual {
@@ -794,15 +797,16 @@
       border-radius: 0.75rem;
       overflow: hidden;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
       aspect-ratio: 16 / 9;
-      min-height: clamp(320px, 55vh, 680px);
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     }
 
     .theatre__media-slot {
       width: 100%;
+      height: 100%;
+      display: flex;
       transition: opacity 0.25s ease;
     }
 
@@ -831,6 +835,7 @@
     .theatre__media-slot > * {
       width: 100%;
       height: 100%;
+      flex: 1 1 auto;
     }
 
     .theatre__media-slot > video {
@@ -1058,8 +1063,8 @@
           <p>Mauris rhoncus odio id dui venenatis, vel malesuada erat vehicula. In hac habitasse platea dictumst.</p>
           <p>Sed sagittis velit arcu, et bibendum ante pulvinar vel. Donec viverra nibh et mauris feugiat hendrerit.</p>
         </article>
-        <article class="media-panel" aria-label="Open Chance release loop in theatre view" data-theatre-type="video" data-theatre-video="assets/spotify_embeds/chance_spotify_embed.mp4" data-theatre-title="Chance Release Loop" data-theatre-description="In fall of 2024, I was invited to Chance the Rapper's home for a songwriting camp with collaborator Vic Mensa. I facilitated the set-up and running of the guest studio.<br><br>As our usual process goes, Vic and I spent hours listening to material, sharing our perspectives on a topic, and crafting a songwriting approach. One particularly inspired recording session resulted in &quot;Back to the Go.&quot;<br><br>This song, featuring an interpolation of Djo's smash hit &quot;End of Beginning,&quot; appeared on Chance the Rapper's long-anticipated STAR LINE (2025), marking his first full-length release in six years." data-theatre-link="https://open.spotify.com/track/12FnOWzpxUtOj5hW1xhV6A" data-theatre-link-label="Open on Spotify" data-theatre-caption="Chance the Rapper's &quot;House of Kicks&quot; creative HQ, as rendered by Meta Hyperscape technology; this environment, and many more rooms, are fully explorable using a Quest VR headset.">
-          <h3 class="sr-only">Chance Release Loop</h3>
+        <article class="media-panel" aria-label="Open Chance release loop in theatre view" data-theatre-type="video" data-theatre-video="assets/spotify_embeds/chance_spotify_embed.mp4" data-theatre-title="Recording at Chance's HOK" data-theatre-description="In fall of 2024, I was invited to Chance the Rapper's home for a songwriting camp with collaborator Vic Mensa. I facilitated the set-up and running of the guest studio.<br><br>As our usual process goes, Vic and I spent hours listening to material, sharing our perspectives on a topic, and crafting a songwriting approach. One particularly inspired recording session resulted in &quot;Back to the Go.&quot;<br><br>This song, featuring an interpolation of Djo's smash hit &quot;End of Beginning,&quot; appeared on Chance the Rapper's STAR LINE (2025), marking his first LP release in six years." data-theatre-link="https://open.spotify.com/track/12FnOWzpxUtOj5hW1xhV6A" data-theatre-link-label="Open on Spotify" data-theatre-caption="Chance the Rapper's &quot;House of Kicks&quot; creative HQ, as rendered by Meta Hyperscape technology; this environment, and many more rooms, are fully explorable while wearing a Quest VR headset.">
+          <h3 class="sr-only">Recording at Chance's HOK</h3>
           <div class="spotify-tile" style="--cta-color: #1f1f1f;">
             <iframe class="spotify-embed" data-testid="embed-iframe" src="https://open.spotify.com/embed/track/12FnOWzpxUtOj5hW1xhV6A?utm_source=generator&theme=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             <div class="spotify-cta">
@@ -1085,7 +1090,7 @@
             </div>
           </div>
         </article>
-        <article class="media-panel" aria-label="Open Spotify Highlight — Track Four in theatre view" data-theatre-type="spotify" data-theatre-image="https://placehold.co/1200x675?text=Spotify+Preview+4" data-theatre-title="Spotify Highlight — Track Four" data-theatre-description="Dive deeper into arrangement callouts, references, and release rollout checkpoints." data-theatre-link="https://open.spotify.com/track/2Z1zCAPOKStVHLefB9NL4c" data-theatre-link-label="Open on Spotify">
+        <article class="media-panel" aria-label="Open Spotify Highlight — Track Four in theatre view" data-theatre-type="video" data-theatre-video="assets/spotify_embeds/dandre_spotify_embed.mp4" data-theatre-title="Spotify Highlight — Track Four" data-theatre-description="Dive deeper into arrangement callouts, references, and release rollout checkpoints." data-theatre-link="https://open.spotify.com/track/2Z1zCAPOKStVHLefB9NL4c" data-theatre-link-label="Open on Spotify">
           <h3 class="sr-only">Spotify Highlight — Track Four</h3>
           <div class="spotify-tile" style="--cta-color: #54544d;">
             <iframe class="spotify-embed" data-testid="embed-iframe" src="https://open.spotify.com/embed/track/2Z1zCAPOKStVHLefB9NL4c?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -1100,14 +1105,14 @@
           <p>Vestibulum non risus non nibh dapibus dictum. Curabitur id leo nibh, in rhoncus turpis.</p>
         </article>
         <div class="media-pair">
-          <article class="media-panel" aria-label="Open Vic Mensa partnership in theatre view" data-theatre-type="youtube" data-video-id="Y5ax2kVa5m8" data-theatre-image="https://placehold.co/1200x675?text=Vic+Mensa" data-theatre-title="Vic Mensa Partnership" data-theatre-description="A performance partnership spotlight featuring Vic Mensa and live production notes." data-theatre-slideshow="vic">
+          <article class="media-panel" aria-label="Open Vic Mensa partnership in theatre view" data-theatre-type="image" data-theatre-image="https://placehold.co/1200x675?text=Vic+Slide+1" data-theatre-title="Vic Mensa Partnership" data-theatre-description="A performance partnership spotlight featuring Vic Mensa and live production notes." data-theatre-slideshow="vic">
             <button class="media-panel__action media-panel__action--video" type="button" aria-label="Open theatre with more info">Click for Info</button>
             <h3 class="sr-only">Vic Mensa Partnership</h3>
             <figure class="media-panel__cover" data-name="Vic&#10;Mensa" style="--cover-image: url('assets/vic_content/vic_cover_wide.png');">
               <img src="assets/vic_content/vic_cover_wide.png" alt="Vic Mensa cover collage">
             </figure>
           </article>
-          <article class="media-panel" aria-label="Open Nico Segal partnership in theatre view" data-theatre-type="youtube" data-video-id="hRLA_FzqGYs" data-theatre-image="https://placehold.co/1200x675?text=Nico+Segal" data-theatre-title="Nico Segal Partnership" data-theatre-description="Behind-the-scenes collaboration with Nico Segal captured for creative partners." data-theatre-slideshow="nico">
+          <article class="media-panel" aria-label="Open Nico Segal partnership in theatre view" data-theatre-type="image" data-theatre-image="https://placehold.co/1200x675?text=Nico+Slide+1" data-theatre-title="Nico Segal Partnership" data-theatre-description="Behind-the-scenes collaboration with Nico Segal captured for creative partners." data-theatre-slideshow="nico">
             <button class="media-panel__action media-panel__action--video" type="button" aria-label="Open theatre with more info">Click for Info</button>
             <h3 class="sr-only">Nico Segal Partnership</h3>
             <figure class="media-panel__cover" data-name="Nico&#10;Segal" style="--cover-image: url('assets/nico_content/nico_cover_wide.png'); --cover-position: center 85%;">
@@ -1301,71 +1306,74 @@
       const theatreSlides = {
         vic: [
           {
-            type: 'youtube',
-            videoId: 'Y5ax2kVa5m8',
-            title: 'Vic Mensa — Still with the Smoke',
-            description: 'Official video for Vic Mensa’s “Still with the Smoke,” captured on location in Senegal.',
+            type: 'video',
+            src: 'assets/vic_content/vic_swts_vid.mp4',
+            title: 'Vic Slide 1',
+            caption: 'SWTS loop preview',
+            description: '',
             link: 'https://www.youtube.com/watch?v=Y5ax2kVa5m8',
-            linkLabel: 'Watch Still with the Smoke',
-            thumbnail: 'assets/vic_content/vic_swts_senegal.png',
-            thumbnailAlt: 'Vic Mensa performing in front of a smoky backdrop in Senegal',
-            autoEmbed: true,
-            autoplay: false,
-            label: 'Vic Mensa'
+            linkLabel: 'Open on YouTube',
+            autoplay: true,
+            muted: true,
+            loop: true,
+            preload: 'auto'
           },
           {
-            type: 'image',
-            src: 'assets/vic_content/vic_swts_senegal.png',
-            title: 'SWTS production still',
-            description: 'Led cue calling and capture for the Senegal stop while coordinating creative handoffs.',
-            alt: 'Vic Mensa performing live with spotlight and red lighting'
+            type: 'video',
+            src: 'assets/vic_content/vic_loud_vid.mp4',
+            title: 'Vic Slide 2',
+            caption: 'LOUD tour loop preview',
+            description: '',
+            link: 'https://www.youtube.com/watch?v=qGhMZK1ZWpw',
+            linkLabel: 'Open on YouTube',
+            autoplay: true,
+            muted: true,
+            loop: true,
+            preload: 'auto'
           },
           {
-            type: 'image',
-            src: 'https://placehold.co/1200x675?text=Vic+Placeholder+2',
-            title: 'Vic Mensa concept board',
-            description: 'Placeholder slide highlighting moodboard imagery until final artwork is ready.',
-            alt: 'Placeholder artwork for Vic Mensa concept board'
-          },
-          {
-            type: 'image',
-            src: 'https://placehold.co/1200x675?text=Vic+Placeholder+3',
-            title: 'Live mix cues (placeholder)',
-            description: 'Temporary still representing live mix cue sheet; update with final capture when available.',
-            alt: 'Placeholder graphic representing live mix cues'
+            type: 'video',
+            src: 'assets/vic_content/vic_seminar_vid.mp4',
+            title: 'Vic Slide 3',
+            caption: 'Seminar loop preview',
+            description: '',
+            autoplay: true,
+            muted: true,
+            loop: true,
+            preload: 'auto'
           }
         ],
         nico: [
           {
-            type: 'youtube',
-            videoId: 'hRLA_FzqGYs',
-            title: 'Nico Segal — Steppenwolf Residency',
-            description: 'Documented Nico’s residency with staged playback, FOH capture, and director notes.',
+            type: 'video',
+            src: 'assets/nico_content/nico_ttgwh_vid.mp4',
+            title: 'Nico Slide 1',
+            caption: 'TTGWH loop preview',
+            description: '',
             link: 'https://www.youtube.com/watch?v=hRLA_FzqGYs',
-            linkLabel: 'Watch rehearsal capture',
-            thumbnail: 'assets/nico_content/nico_ttgwh_steppenwolf.png',
-            label: 'Nico Segal'
+            linkLabel: 'Open on YouTube',
+            autoplay: true,
+            muted: true,
+            loop: true,
+            preload: 'auto'
+          },
+          {
+            type: 'video',
+            src: 'assets/nico_content/nico_hob2_vid.mp4',
+            title: 'Nico Slide 2',
+            caption: 'House of Blues loop preview',
+            description: '',
+            autoplay: true,
+            muted: true,
+            loop: true,
+            preload: 'auto'
           },
           {
             type: 'image',
-            src: 'assets/nico_content/nico_ttgwh_steppenwolf.png',
-            title: 'Session coverage still',
-            description: 'Brought hybrid streaming workflow to the Steppenwolf lab, balancing mix and narrative shots.',
-            alt: 'Nico Segal performing with horn section under stage lighting'
-          },
-          {
-            type: 'image',
-            src: 'https://placehold.co/1200x675?text=Nico+Placeholder+2',
-            title: 'Nico Segal rehearsal notes',
-            description: 'Placeholder slide for upcoming rehearsal photography and documentation.',
-            alt: 'Placeholder artwork for Nico Segal rehearsal notes'
-          },
-          {
-            type: 'image',
-            src: 'https://placehold.co/1200x675?text=Nico+Placeholder+3',
-            title: 'FOH setup preview (placeholder)',
-            description: 'Temporary image representing FOH setup overview until final still is delivered.',
-            alt: 'Placeholder graphic representing FOH setup overview'
+            src: 'https://placehold.co/1200x675?text=Nico+Slide+3',
+            title: 'Nico Slide 3',
+            caption: 'Placeholder 3',
+            description: ''
           }
         ]
       };
@@ -1415,9 +1423,6 @@
           if (type === 'spotify') {
             return 'Open on Spotify';
           }
-          if (type === 'youtube') {
-            return 'Watch on YouTube';
-          }
           if (type === 'video') {
             return 'Open media file';
           }
@@ -1456,7 +1461,7 @@
         };
 
         const resetDialogState = () => {
-          container.classList.remove('theatre--spotify', 'theatre--youtube', 'theatre--image', 'theatre--video');
+          container.classList.remove('theatre--spotify', 'theatre--image', 'theatre--video');
         };
 
         const updateNavVisibility = () => {
@@ -1527,7 +1532,7 @@
         };
 
         const createSingleMediaNode = (meta, trigger) => {
-          if (meta.type === 'spotify' || meta.type === 'youtube') {
+          if (meta.type === 'spotify') {
             const placeholder = trigger.dataset.theatreImage || 'https://placehold.co/1200x675?text=Media+Preview';
             const img = document.createElement('img');
             img.src = placeholder;
@@ -1579,82 +1584,6 @@
         };
 
         const createSlideNode = (slide, fallbackTitle) => {
-          if (slide.type === 'youtube') {
-            if (!slide.videoId) {
-              return null;
-            }
-
-            const title = slide.title || fallbackTitle || 'Video';
-            const container = document.createElement('div');
-            container.className = 'video-embed video-embed--theatre';
-            container.style.setProperty('--video-aspect', '56.25%');
-            const shouldAutoplay = slide.autoplay !== false;
-
-            const buildIframe = () => {
-              const iframe = document.createElement('iframe');
-              const autoplayParam = shouldAutoplay ? 'autoplay=1&' : '';
-              iframe.src = `https://www.youtube.com/embed/${slide.videoId}?${autoplayParam}rel=0&modestbranding=1`;
-              iframe.title = title;
-              iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-              iframe.allowFullscreen = true;
-              iframe.setAttribute('allowfullscreen', '');
-              iframe.loading = 'lazy';
-              iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-              iframe.width = '100%';
-              iframe.height = '100%';
-              iframe.style.position = 'absolute';
-              iframe.style.inset = '0';
-              iframe.style.width = '100%';
-              iframe.style.height = '100%';
-              return iframe;
-            };
-
-            if (slide.autoEmbed) {
-              container.appendChild(buildIframe());
-              return container;
-            }
-
-            const overlay = document.createElement('button');
-            overlay.type = 'button';
-            overlay.className = 'video-embed__overlay';
-            if (slide.thumbnail) {
-              overlay.classList.add('video-embed__overlay--has-thumbnail');
-            }
-            overlay.setAttribute('aria-label', `Play ${title}`);
-
-            const media = document.createElement('span');
-            media.className = 'video-embed__media';
-            const img = document.createElement('img');
-            img.src = slide.thumbnail || `https://img.youtube.com/vi/${slide.videoId}/hqdefault.jpg`;
-            img.alt = slide.thumbnailAlt || '';
-            img.loading = 'lazy';
-            img.decoding = 'async';
-            media.appendChild(img);
-            overlay.appendChild(media);
-
-            if (slide.label) {
-              const label = document.createElement('span');
-              label.className = 'video-embed__label';
-              label.textContent = slide.label;
-              overlay.appendChild(label);
-            }
-
-            const playIcon = document.createElement('span');
-            playIcon.className = 'video-embed__play';
-            playIcon.setAttribute('aria-hidden', 'true');
-            overlay.appendChild(playIcon);
-
-            const loadPlayer = () => {
-              container.innerHTML = '';
-              container.appendChild(buildIframe());
-            };
-
-            overlay.addEventListener('click', loadPlayer, { once: true });
-            container.appendChild(overlay);
-
-            return container;
-          }
-
           if (slide.type === 'image') {
             if (!slide.src) {
               return null;
